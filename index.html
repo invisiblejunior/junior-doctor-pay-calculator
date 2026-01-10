@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Australian Junior Doctor Pay Calculator 2025 (VIC & NSW) | Free Estimator</title>
-    <meta name="description" content="Calculate your fortnightly pay, overtime, and penalty rates. Updated for 2025 VIC DiT Agreement & NSW Award C9839. Accurate estimators for Interns, Residents, and Registrars.">
-    <meta name="keywords" content="Junior Doctor Pay Calculator, JMO Pay Rates Australia, NSW Health Pay, Victoria Doctor Salary, Medical Officer Overtime, Intern Payslip Estimator">
+    <title>Australian Junior Doctor Pay Calculator 2025 (VIC, NSW & QLD)</title>
+    <meta name="description" content="Free pay calculator for Australian Junior Doctors. Estimates overtime, shift penalties, and allowances for VIC (DiT), NSW (Award), and QLD (MOCA7).">
+    <meta name="keywords" content="Junior Doctor Pay Calculator, JMO Pay Rates Australia, NSW Health Pay, Victoria Doctor Salary, QLD Health MOCA7, Medical Officer Overtime">
     <meta name="author" content="InvisibleJunior">
     <link rel="canonical" href="https://invisiblejunior.github.io/Victoria-junior-doctor-pay-calculator/">
 
     <meta property="og:title" content="Australian Junior Doctor Pay Calculator 2025">
-    <meta property="og:description" content="Unofficial payslip estimators for VIC & NSW. Calculate unrostered overtime, split shifts, and public holiday penalties accurately.">
+    <meta property="og:description" content="Unofficial payslip estimators for VIC, NSW & QLD. Calculate unrostered overtime, split shifts, and public holiday penalties accurately.">
     <meta property="og:url" content="https://invisiblejunior.github.io/Victoria-junior-doctor-pay-calculator/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Junior Doctor Pay Calculator">
@@ -29,7 +29,7 @@
         "price": "0",
         "priceCurrency": "AUD"
       },
-      "description": "Calculates overtime, penalties, and allowances for Australian Junior Doctors in Victoria and NSW."
+      "description": "Calculates overtime, penalties, and allowances for Australian Junior Doctors in Victoria, NSW, and Queensland."
     }
     </script>
 
@@ -40,46 +40,55 @@
             background: var(--bg); color: var(--text); padding: 40px 20px; 
             text-align: center; line-height: 1.6;
         }
-        .container { max-width: 800px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; }
         
         h1 { color: #333; margin-bottom: 10px; font-size: 2.2rem; }
-        h2 { font-size: 1.3rem; color: #555; margin-top: 40px; }
+        h2 { font-size: 1.3rem; color: #555; margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 10px; display: inline-block; }
         p.sub { color: #666; font-size: 1.1em; margin-bottom: 40px; }
 
+        /* Grid for 3 items */
         .grid { 
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; 
-            max-width: 600px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; 
+            max-width: 900px; margin: 0 auto;
         }
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
 
         .card { 
             background: var(--card); border-radius: 12px; padding: 30px 20px; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-decoration: none; color: inherit;
             transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #eee;
-            display: block; /* Ensures the whole card is clickable */
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
         .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
         
         .state-badge { 
             font-weight: 800; font-size: 24px; display: inline-block; 
-            padding: 10px 20px; border-radius: 8px; margin-bottom: 15px; color: white;
+            padding: 10px 25px; border-radius: 8px; margin-bottom: 15px; color: white;
+            min-width: 80px;
         }
         
         /* State Colors */
         .vic-theme { background-color: #005eb8; } /* Navy for Vic */
         .nsw-theme { background-color: #d32f2f; } /* Red for NSW */
+        .qld-theme { background-color: #800000; } /* Maroon for QLD */
         
         .card h3 { margin: 0; font-size: 18px; color: #444; }
         .card p { font-size: 13px; color: #888; margin-top: 8px; }
 
-        .seo-text { 
-            text-align: left; background: white; padding: 25px; 
-            border-radius: 8px; margin-top: 50px; border: 1px solid #eee; font-size: 14px; color: #555; 
+        /* SEO & FAQ Text */
+        .content-section { 
+            text-align: left; background: white; padding: 30px; 
+            border-radius: 8px; margin-top: 40px; border: 1px solid #eee; font-size: 15px; color: #555; 
         }
-        .seo-text h3 { color: #333; margin-top: 0; }
+        .content-section h3 { color: #333; margin-top: 0; margin-bottom: 15px; }
+        .content-section ul { padding-left: 20px; margin-bottom: 20px; }
+        .content-section li { margin-bottom: 8px; }
+
+        /* FAQ Styling */
+        .faq-item { margin-bottom: 20px; }
+        .faq-q { font-weight: 700; color: #333; font-size: 16px; margin-bottom: 5px; }
+        .faq-a { color: #666; font-size: 14px; margin: 0; }
 
         footer { margin-top: 60px; font-size: 12px; color: #999; border-top: 1px solid #ddd; padding-top: 20px;}
-        .coffee-link { text-decoration: none; color: #005eb8; font-weight: bold; display: inline-block; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -92,17 +101,23 @@
             <a href="vic/" class="card">
                 <span class="state-badge vic-theme">VIC</span>
                 <h3>Victoria</h3>
-                <p><strong>2025 Rates</strong><br></p>
+                <p><strong>2025 Rates</strong><br>DiT Agreement 2022-2026</p>
             </a>
 
             <a href="nsw/" class="card">
                 <span class="state-badge nsw-theme">NSW</span>
                 <h3>New South Wales</h3>
-                <p><strong>Award C9839</strong><br></p>
+                <p><strong>Award C9839</strong><br>State Award</p>
+            </a>
+
+            <a href="qld/" class="card">
+                <span class="state-badge qld-theme">QLD</span>
+                <h3>Queensland</h3>
+                <p><strong>MOCA 7</strong><br>2025 Draft Rates</p>
             </a>
         </div>
 
-        <div class="seo-text">
+        <div class="content-section">
             <h3>How these calculators work</h3>
             <p>
                 Medical officer payslips in Australia are notoriously difficult to decipher. With varying rules for <strong>unrostered overtime</strong>, <strong>rostered overtime</strong>, and <strong>shift penalties</strong> across states, it's easy to be underpaid.
@@ -110,26 +125,48 @@
             <p>
                 These free tools are designed for <strong>Interns, Residents (RMO/HMO), and Registrars</strong> to audit their fortnightly pay.
             </p>
-            <ul style="padding-left: 20px;">
-                <li><strong>VIC Calculator:</strong> Based on the Doctors in Training (DiT) Enterprise Agreement (2022-2026).</li>
-                <li><strong>NSW Calculator:</strong> Based on the Public Hospital Medical Officers (State) Award (Variation C9839).</li>
+            <ul>
+                <li><strong>VIC:</strong> Based on the Doctors in Training (DiT) Enterprise Agreement (2022-2026).</li>
+                <li><strong>NSW:</strong> Based on the Public Hospital Medical Officers (State) Award (Variation C9839).</li>
+                <li><strong>QLD:</strong> Based on the Medical Officers' Certified Agreement (MOCA 7).</li>
             </ul>
         </div>
 
+        <div class="content-section">
+            <h3>Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-q">Is this data sent to a server?</div>
+                <p class="faq-a">No. All calculations happen <strong>locally on your device</strong> (in your browser). We do not store, track, or transmit your salary data.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Does this include tax?</div>
+                <p class="faq-a">No. These calculators estimate your <strong>Gross (Pre-Tax)</strong> pay. To calculate your take-home pay, you will need to apply Australian income tax brackets and HECS/HELP repayments to the gross figure.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Why does my official payslip differ?</div>
+                <p class="faq-a">Small discrepancies can occur due to specific hospital payroll software rounding (e.g., 4 decimals vs 2 decimals), salary packaging deductions, or specific local allowances not covered here.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How are Public Holidays calculated?</div>
+                <p class="faq-a">Each state handles PH differently. NSW typically pays 150% + a day in lieu. VIC pays 250%. QLD pays 150% or 250% depending on the specific holiday. Select the correct PH type in your state's calculator for the most accurate result.</p>
+            </div>
+        </div>
+
         <div style="margin-top: 30px; font-size: 13px; color: #aaa;">
-            Queensland & WA calculators coming soon...
+            WA & SA calculators coming soon...
         </div>
 
         <footer>
             <p><strong>Disclaimer:</strong> This is an unofficial estimator for educational purposes only. 
-            It is not legal or financial advice. We are not affiliated with NSW Health or AMA Victoria. 
-            Always check your official payslip against your hospital's payroll.</p>
-            
+            It is not legal or financial advice. We are not affiliated with NSW Health, Queensland Health, or AMA Victoria. 
+            Always check your official payslip against your hospital's payroll.
+Last updated January 2026</p>
         </footer>
     </div>
 
 </body>
 </html>
-
-
-
