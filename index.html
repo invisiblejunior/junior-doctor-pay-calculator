@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Australian Junior Doctor Pay Calculator 2025 (VIC, NSW & QLD)</title>
-    <meta name="description" content="Free pay calculator for Australian Junior Doctors. Estimates overtime, shift penalties, and allowances for VIC (DiT), NSW (Award), and QLD (MOCA7).">
-    <meta name="keywords" content="Junior Doctor Pay Calculator, JMO Pay Rates Australia, NSW Health Pay, Victoria Doctor Salary, QLD Health MOCA7, Medical Officer Overtime">
+    <title>Australian Junior Doctor Pay Calculator 2025 (VIC, NSW, QLD, SA, WA, NT)</title>
+    <meta name="description" content="Free pay calculator for Australian Junior Doctors. Estimates overtime, shift penalties, and allowances for VIC (DiT), NSW (Award), QLD (MOCA7), SA (SMOEA), WA (AMA), and NT.">
+    <meta name="keywords" content="Junior Doctor Pay Calculator, JMO Pay Rates Australia, NSW Health Pay, Victoria Doctor Salary, QLD Health MOCA7, Medical Officer Overtime, SA Health SMOEA, WA Health AMA, NT Medical Officers">
     <meta name="author" content="InvisibleJunior">
     <link rel="canonical" href="https://invisiblejunior.github.io/Victoria-junior-doctor-pay-calculator/">
 
     <meta property="og:title" content="Australian Junior Doctor Pay Calculator 2025">
-    <meta property="og:description" content="Unofficial payslip estimators for VIC, NSW & QLD. Calculate unrostered overtime, split shifts, and public holiday penalties accurately.">
+    <meta property="og:description" content="Unofficial payslip estimators for VIC, NSW, QLD, SA, WA & NT. Calculate unrostered overtime, split shifts, and public holiday penalties accurately.">
     <meta property="og:url" content="https://invisiblejunior.github.io/Victoria-junior-doctor-pay-calculator/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Junior Doctor Pay Calculator">
@@ -29,7 +29,7 @@
         "price": "0",
         "priceCurrency": "AUD"
       },
-      "description": "Calculates overtime, penalties, and allowances for Australian Junior Doctors in Victoria, NSW, and Queensland."
+      "description": "Calculates overtime, penalties, and allowances for Australian Junior Doctors in Victoria, NSW, Queensland, South Australia, Western Australia, and Northern Territory."
     }
     </script>
 
@@ -40,16 +40,16 @@
             background: var(--bg); color: var(--text); padding: 40px 20px; 
             text-align: center; line-height: 1.6;
         }
-        .container { max-width: 900px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; }
         
         h1 { color: #333; margin-bottom: 10px; font-size: 2.2rem; }
         h2 { font-size: 1.3rem; color: #555; margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 10px; display: inline-block; }
         p.sub { color: #666; font-size: 1.1em; margin-bottom: 40px; }
 
-        /* Grid for 3 items */
+        /* Grid for items */
         .grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; 
-            max-width: 900px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; 
+            max-width: 1000px; margin: 0 auto;
         }
 
         .card { 
@@ -70,6 +70,9 @@
         .vic-theme { background-color: #005eb8; } /* Navy for Vic */
         .nsw-theme { background-color: #d32f2f; } /* Red for NSW */
         .qld-theme { background-color: #800000; } /* Maroon for QLD */
+        .sa-theme  { background-color: #8a1538; } /* Wine Red for SA */
+        .wa-theme  { background-color: #00566b; } /* Teal for WA */
+        .nt-theme  { background-color: #d35400; } /* Ochre for NT */
         
         .card h3 { margin: 0; font-size: 18px; color: #444; }
         .card p { font-size: 13px; color: #888; margin-top: 8px; }
@@ -89,46 +92,13 @@
         .faq-a { color: #666; font-size: 14px; margin: 0; }
 
         footer { margin-top: 60px; font-size: 12px; color: #999; border-top: 1px solid #ddd; padding-top: 20px;}
-
-/* --- NAVIGATION MENU --- */
-    .navbar {
-        background-color: #2c3e50;
-        overflow: hidden;
-        border-radius: 6px;
-        margin-bottom: 25px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .navbar a {
-        flex: 1;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 12px 10px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 14px;
-        transition: background 0.3s;
-        min-width: 80px;
-    }
-
-    .navbar a:hover {
-        background-color: #ddd;
-        color: black;
-    }
-
-    /* Active Page Colors */
-    .navbar a.active-home { background-color: #555; color: white; }
-    .navbar a.active-vic { background-color: #005eb8; color: white; }
-    .navbar a.active-nsw { background-color: #d32f2f; color: white; }
-    .navbar a.active-qld { background-color: #800000; color: white; }
         
+        /* Navbar Style from original (if you decide to use it later, keeping CSS minimal as requested) */
+        /* Currently removed to match "same style as before" request strictly */
+
     </style>
 </head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKM65Q9K0W"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -140,17 +110,8 @@
     
 <body>
 
-
-    
     <div class="container">
 
-        <nav class="navbar">
-    <a href="https://invisiblejunior.github.io/junior-doctor-pay-calculator/index.html" class="active-home">Home</a>
-    <a href="https://invisiblejunior.github.io/junior-doctor-pay-calculator/vic/">VIC</a>
-    <a href="https://invisiblejunior.github.io/junior-doctor-pay-calculator/nsw/">NSW</a>
-    <a href="https://invisiblejunior.github.io/junior-doctor-pay-calculator/qld/">QLD</a>
-</nav>
-        
         <h1>Junior Doctor Pay Calculators</h1>
         <p class="sub">Select your state to estimate overtime, shift penalties & allowances.</p>
 
@@ -172,6 +133,24 @@
                 <h3>Queensland</h3>
                 <p><strong>MOCA 7</strong><br>2025 Draft Rates</p>
             </a>
+
+            <a href="sa/" class="card">
+                <span class="state-badge sa-theme">SA</span>
+                <h3>South Australia</h3>
+                <p><strong>SMOEA 2025</strong><br>New 2025 Agreement</p>
+            </a>
+
+            <a href="wa/" class="card">
+                <span class="state-badge wa-theme">WA</span>
+                <h3>Western Australia</h3>
+                <p><strong>AMA 2024</strong><br>Agreement 2024</p>
+            </a>
+
+            <a href="nt/" class="card">
+                <span class="state-badge nt-theme">NT</span>
+                <h3>Northern Territory</h3>
+                <p><strong>NTPS 2022-2025</strong><br>2025 Rates</p>
+            </a>
         </div>
 
         <div class="content-section">
@@ -186,6 +165,9 @@
                 <li><strong>VIC:</strong> Based on the Doctors in Training (DiT) Enterprise Agreement (2022-2026).</li>
                 <li><strong>NSW:</strong> Based on the Public Hospital Medical Officers (State) Award (Variation C9839).</li>
                 <li><strong>QLD:</strong> Based on the Medical Officers' Certified Agreement (MOCA 7).</li>
+                <li><strong>SA:</strong> Based on the SA Health Salaried Medical Officers Enterprise Agreement 2025.</li>
+                <li><strong>WA:</strong> Based on the WA Health System Medical Practitioners (AMA) Industrial Agreement 2024.</li>
+                <li><strong>NT:</strong> Based on the Medical Officers Northern Territory Public Sector 2022 - 2025 Enterprise Agreement.</li>
             </ul>
         </div>
 
@@ -197,10 +179,11 @@
                 <p class="faq-a">No. All calculations happen <strong>locally on your device</strong> (in your browser). We do not store, track, or transmit your salary data.</p>
             </div>
 
-                 <div class="faq-item">
+             <div class="faq-item">
              <div class="faq-q">Why did I make this page?</div>
         <div class="faq-a">
             As doctors, for many of us, our first job and pay slip may be when we start work as an intern. From the start we are never even taught how to read a pay slip, and therefore have no way of knowing whether we are being paid correctly. Looking at my own pay slips, I noticed that errors were frequently being made. So I made this calculator to help others understand and analyze their own pay slips according to their rosters and unrostered overtime claims.
+        </div>
         </div>
 
             <div class="faq-item">
@@ -215,28 +198,17 @@
 
             <div class="faq-item">
                 <div class="faq-q">How are Public Holidays calculated?</div>
-                <p class="faq-a">Each state handles PH differently. NSW typically pays 150% + a day in lieu. VIC pays 250%. QLD pays 150% or 250% depending on the specific holiday. Select the correct PH type in your state's calculator for the most accurate result.</p>
+                <p class="faq-a">Each state handles PH differently. NSW typically pays 150% + a day in lieu. VIC pays 250%. QLD and NT pay 250%. Select the correct PH type in your state's calculator for the most accurate result.</p>
             </div>
-        </div>
-
-        <div style="margin-top: 30px; font-size: 13px; color: #aaa;">
-            WA & SA calculators coming soon...
         </div>
 
         <footer>
             <p><strong>Disclaimer:</strong> This is an unofficial estimator for educational purposes only. 
-            It is not legal or financial advice. We are not affiliated with NSW Health, Queensland Health, or AMA Victoria. 
+            It is not legal or financial advice. We are not affiliated with State Health Departments or AMAs. 
             Always check your official payslip against your hospital's payroll.
-Last updated January 2026</p>
+            Last updated January 2026</p>
         </footer>
     </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
